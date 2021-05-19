@@ -59,17 +59,14 @@ def turn_count(board)
   board.count{|token| token=="X"||token=="O"}
 end
 
-def current_player(board)
-   i=0
-
-  if board[i]=="X"
-    i+=1
-    board[i+1]="O"
-  elsif board[i]=="O"
-    i+=1
-    board[i+1]="X"
-  end
+def position_taken?(board, index)
+  board[index] == 'X' || board[index] == 'O'
 end
+
+def current_player(board)
+  turn_count(board).even? ? 'X' : 'O'
+end
+
 
 
 
@@ -79,9 +76,6 @@ def move(board, index, current_player)
 end
 
 
-def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
-end
 #Asks user for a number, check if it is valid, and if it's not, recursively continues to ask for a number
 
 #turn
@@ -171,4 +165,3 @@ end
 
 
 
-#WIN_COMBINATIONS
