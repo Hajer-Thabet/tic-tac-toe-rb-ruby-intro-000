@@ -12,8 +12,9 @@ WIN_COMBINATIONS = [
 ]
 
 def play(board)
-  until over?(board)
+
     turn(board)
+      until over?(board)
 
   if won?(board)
     if winner(board)=="X"
@@ -25,11 +26,11 @@ def play(board)
 
 
   elsif draw?(board)
-    puts"Cat's Game!"
+    puts "Cat's Game!"
 
 
   end
-end
+  end
 
 end
 #displays a tic tac toe board, with board spaces passed as an array
@@ -161,3 +162,10 @@ def over?(board)
     end
   end
 end
+
+
+
+
+
+#WIN_COMBINATIONS
+
