@@ -30,7 +30,7 @@ def play(board)
 
 
   end
-  
+
 
 end
 #displays a tic tac toe board, with board spaces passed as an array
@@ -263,6 +263,3 @@ def winner(board)
     board[winning_combo.first]
   end
 end
-
-
-
