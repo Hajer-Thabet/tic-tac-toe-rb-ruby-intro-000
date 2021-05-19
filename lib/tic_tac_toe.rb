@@ -12,24 +12,13 @@ WIN_COMBINATIONS = [
 ].freeze
 
 def play(board)
-
-    turn(board)
-      until over?(board)
-
+  turn(board) until over?(board)
   if won?(board)
-    if winner(board)=="X"
-      puts "Congratulations X!"
-    else
-      puts "Congratulations O!"
-
-    end
-
-
+    puts "Congratulations #{winner(board)}!"
   elsif draw?(board)
     puts "Cat's Game!"
-
-
   end
+end
 
 
 end
@@ -52,7 +41,7 @@ end
 
 #checks the number to see if 1) the position is already taken and 2)it is an actual number
 def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
+  index.between?(0, 8) && !position_taken?(board, index)
 end
 #turn_count
 def turn_count(board)
@@ -90,7 +79,7 @@ def turn(board)
 
       move(board, index, player(board))
 
-    display_board(board)
+      display_board(board)
   else
     turn(board)
   end
@@ -160,3 +149,6 @@ def over?(board)
     end
   end
 end
+
+
+
